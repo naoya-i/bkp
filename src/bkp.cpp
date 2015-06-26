@@ -79,7 +79,7 @@ void _worker(const char *processorName, int myMPIrank, int argc, char **argv) {
 
     // Execute the process.
     ostringstream ss;
-    ss << "BKP_INDEX=" << msgRecv << " " << cmd;
+    ss << "export BKP_INDEX=" << msgRecv << "; " << cmd;
 
     cout << _timestamp() << " R" << myMPIrank << "@" << processorName << " is executing " << ss.str() << endl;
 
