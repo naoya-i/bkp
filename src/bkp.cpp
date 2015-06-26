@@ -83,9 +83,9 @@ void _worker(const char *processorName, int myMPIrank, int argc, char **argv) {
 
     cout << _timestamp() << " R" << myMPIrank << "@" << processorName << " is executing " << ss.str() << endl;
 
-    system(ss.str().c_str());
+    int ret = system(ss.str().c_str());
 
-    cout << _timestamp() << " R" << myMPIrank << "@" << processorName << " has done the task " << msgRecv << "!" << endl;
+    cout << _timestamp() << " R" << myMPIrank << "@" << processorName << " has done the task " << msgRecv << "! (status=" << ret << ")" << endl;
   }
 }
 
